@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4>Chat Application</h4>
+        </div>
+        <div class="card-body chat-box">
+          <div *ngFor="let message of messages" class="chat-message">
+            {{ message }}
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="message" placeholder="Type a message..."
+              (keyup.enter)="sendMessage()" />
+            <div class="input-group-append">
+              <button class="btn btn-primary" (click)="sendMessage()">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
